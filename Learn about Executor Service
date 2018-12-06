@@ -1,0 +1,29 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package test;
+
+/**
+ *
+ * @author Денис
+ */
+public class tmp_thread implements Runnable{
+
+    @Override
+    public void run() {
+        System.out.println("hjk");
+        for (int j = 0; j < Test.c_iter; j++) {
+            long startTime = System.currentTimeMillis();
+            try {
+                Thread.sleep(Test.sleep);
+            } catch (Exception e) {
+            }
+            long stopTime = System.currentTimeMillis();
+            if (stopTime - startTime > Test.sleep + 100) {
+                System.out.println("Программа выполнялась" + (stopTime - startTime));
+            }
+        }
+    }
+}
